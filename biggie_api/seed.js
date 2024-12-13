@@ -9,7 +9,7 @@ async function seedDB() {
 
   try {
     await client.connect();
-    const db = client.db("POSV1");
+    const db = client.db("POS");
     await db.dropDatabase();
     // Categories
     const subcategories = [
