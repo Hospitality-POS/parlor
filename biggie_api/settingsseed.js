@@ -20,7 +20,7 @@ async function seedSystemSettings() {
         email: "michael@bingwa.ke",
         till_no: 747474745,
         phone: 254746665877.0,
-        name: "Big Smoke",
+        name: "Nuba Spa",
         location: "Ruaka p",
         social_link: "https://www.instagram.com/bigsmokekaren/",
         kra_pin: "Pgsbdf8dnf",

@@ -4,7 +4,6 @@ dotenv.config();
 
 async function seedDB() {
   const uri = process.env.MONGO_LOCAL_URI;
-  //   console.log(uri);
   const client = new MongoClient(uri);
 
   try {
@@ -59,10 +58,43 @@ async function seedDB() {
         locatedAt: new ObjectId("65510a2b6538b6995622d1dd"),
         __v: 0,
       },
-
     ];
 
     await db.collection("tables").insertMany(tables);
+
+    // role types
+    const roleTypes = [
+      {
+        _id: new ObjectId("6637729e56faba6c68b73513"),
+        role_type: "admin",
+        createdAt: new Date(1714909854326),
+        updatedAt: new Date(1714909854326),
+        __v: 0,
+      },
+      {
+        _id: new ObjectId("663772b556faba6c68b73515"),
+        role_type: "cashier",
+        createdAt: new Date(1714909877451),
+        updatedAt: new Date(1714909877451),
+        __v: 0,
+      },
+      {
+        _id: new ObjectId("663772bc56faba6c68b73517"),
+        role_type: "supervisor",
+        createdAt: new Date(1714909884530),
+        updatedAt: new Date(1714909884530),
+        __v: 0,
+      },
+      {
+        _id: new ObjectId("663772c656faba6c68b73519"),
+        role_type: "waiter",
+        createdAt: new Date(1714909894114),
+        updatedAt: new Date(1714909894114),
+        __v: 0,
+      },
+    ];
+    
+    await db.collection("role-types").insertMany(roleTypes);
 
     // Users
     const users = [
@@ -78,6 +110,7 @@ async function seedDB() {
           "$2b$10$TeMLDOUEVx85HW4kYQNP2eAHs3FemkNULUg6JGPiiUmHm9QaYU/qa",
         status: "Active",
         isAdmin: true,
+        roleId: new ObjectId("6637729e56faba6c68b73513"),
         createdAt: new Date("2023-10-08T01:29:19.233Z"),
         updatedAt: new Date("2023-10-23T22:28:22.480Z"),
         __v: 0,
@@ -112,7 +145,7 @@ async function seedDB() {
 
     await db.collection("payment_methods").insertMany(payment_methods);
 
-    console.log("Database seeded!");
+    console.log("Seed script run Successfull");
   } catch (err) {
     console.error("Error seeding database:", err);
   } finally {
