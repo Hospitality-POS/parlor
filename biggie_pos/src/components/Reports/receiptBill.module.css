@@ -1,0 +1,174 @@
+.receipt {
+  width: 80mm;
+  height: fit-content;
+  background-color: white;
+  margin: 0 auto;
+  box-shadow: 1px 1px 2px 2px;
+  overflow-y: auto;
+}
+
+.receiptM {
+  width: inherit;
+  height: fit-content;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-height: 80vh;
+  padding: 10px;
+  padding-right: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  color: #6c8b8e;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.greeting {
+  font-size: 14px;
+  text-transform: capitalize;
+  text-align: center;
+  color: #000;
+  margin: 15px 0;
+  letter-spacing: 0.8px;
+}
+
+.order p {
+  font-size: 10px;
+  color: #000;
+  padding-left: 5px;
+  letter-spacing: 0.5px;
+}
+
+hr {
+  border: 0.5px solid #ddd;
+  margin: 10px 0;
+  color: #000;
+}
+
+.details {
+  padding-left: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.details h3 {
+  font-weight: 400;
+  color: #000;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.product {
+  float: left;
+  width: 70%;
+}
+
+.product img {
+  width: 40px;
+  float: left;
+}
+
+.product .info {
+  float: left;
+  margin-left: 8px;
+}
+
+.product .info h4 {
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.product .info p {
+  font-size: 8px;
+  color: #000;
+}
+
+.details > p {
+  color: #000;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.totalprice p {
+  padding-left: 5px;
+}
+
+.totalprice .sub,
+.totalprice .del {
+  font-size: 10px;
+  color: #000;
+}
+
+.totalprice span {
+  float: right;
+  margin-right: 8px;
+}
+
+.totalprice .tot {
+  color: #000;
+  font-size: 12px;
+}
+
+footer {
+  font-size: 8px;
+  text-align: center;
+  margin-top: 60px;
+  color: #000;
+}
+
+.logoprint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrcoded {
+  display: flex;
+  padding-top: 5px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media print {
+  body {
+    color: #000;
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: monospace;
+  }
+
+  .hidden-print,
+  .hidden-print * {
+    display: none !important;
+  }
+
+  .receipt {
+    /* padding-top: 1; */
+    box-shadow: none;
+     overflow-y: hidden;
+     border: none;
+    font-family: monospace;
+
+    /* transform: scale(1); */
+  }
+  .receiptM {
+    padding-top: 0;
+    padding: 0;
+    font-family: monospace;
+
+    overflow: hidden;
+    width: 90mm;
+  }
+}

@@ -1,0 +1,21 @@
+FROM node:21-alpine
+
+
+RUN apk add --no-cache tzdata
+
+ENV TZ=Africa/Nairobi
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
+
+RUN pnpm i --force
+
+COPY . .
+
+EXPOSE 5373
+
+CMD ["pnpm", "run", "dev"]

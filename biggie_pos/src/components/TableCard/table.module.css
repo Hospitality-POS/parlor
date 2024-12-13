@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border: none;
+}
+
+.image {
+  object-fit: cover;
+  position: relative;
+  border-radius: 4px;
+  /* fill-opacity: #914F1E; */
+  /* opacity: 90%; */
+}
+
+.name {
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+.staff-section{
+	font-family: 'Lato', sans-serif;
+	min-height: 100vh;
+  margin-top: -10px;
+  background-color: #F0F1F7;
+}
+.cards {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+.ant-table-thead > tr > th {
+  color: white !important;
+  background-color: #914F1E !important;
+}
+.ant-btn-primary {
+    background-color: #914F1E !important;
+    color: white !important; 
+
+}
+input[type="checkbox" i]:active {
+      background-color: #914F1E !important;
+
+}
+
+
+:where(.css-dev-only-do-not-override-v3wdz2) a:hover {
+    color: #914F1E;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 0.4em;
+}
+.wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  /* gap: 0.3em; */
+}

@@ -1,0 +1,44 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./biggie_api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    external_links:
+      - mongo
+    environment:
+      - TZ=Africa/Nairobi
+      - PORT=3000
+      - MONGO_URIr=mongodb+srv://biggie:bigsmoke@cluster0.9e6qp0o.mongodb.net/POS
+      - MONGO_URI=mongodb://mongo:27017/POS    
+      - MONGO_LOCAL_URI=mongodb://mongo:27017/POS
+      - SECRET=sjd9sndcjsdmnsks9000bkbsk
+    command: ["npm", "start"]
+    restart: always
+
+  frontend:
+    build:
+      context: ./biggie_pos
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5373:5373"
+    depends_on:
+      - backend
+    environment:
+      - TZ=Africa/Nairobi
+    command: ["npm", "run", "dev"]
+    restart: always
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - TZ=Africa/Nairobi
+    volumes:
+      - ./fssData/mongo:/data/db
+    restart: always
